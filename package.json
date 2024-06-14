@@ -1,0 +1,57 @@
+{
+  "name": "@hyperjumptech/react-next-pathname",
+  "description": "Instantly tracks the next pathname on link click.",
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "dev": "tsup --watch",
+    "build": "tsup --minify",
+    "format": "biome format . --write",
+    "format:check": "biome format .",
+    "lint": "biome check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.24.7",
+    "@biomejs/biome": "1.8.1",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/react": "^16.0.0",
+    "@types/node": "^20.14.2",
+    "@types/react": "^18.3.3",
+    "@vitest/coverage-v8": "^1.6.0",
+    "cross-env": "^7.0.3",
+    "esbuild": "^0.21.5",
+    "jsdom": "^24.1.0",
+    "rimraf": "^5.0.7",
+    "tsup": "^8.1.0",
+    "typescript": "^5.4.5",
+    "vitest": "^1.6.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "files": ["dist"],
+  "license": "MIT",
+  "author": "Kevin Hermawan",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyperjumptech/react-next-pathname.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hyperjumptech/react-next-pathname/issues"
+  },
+  "homepage": "https://github.com/hyperjumptech/react-next-pathname#readme",
+  "keywords": [
+    "react",
+    "pathname",
+    "navigation",
+    "link",
+    "routing",
+    "next pathname"
+  ]
+}
