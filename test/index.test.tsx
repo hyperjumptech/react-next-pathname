@@ -26,16 +26,6 @@ describe("NextPathnameProvider", () => {
     expect(getByTestId("pathname").textContent).toBe("/");
   });
 
-  it("provides the initial pathname from defaultPathname", () => {
-    const { getByTestId } = render(
-      <NextPathnameProvider defaultPathname="/initial-path">
-        <TestComponent />
-      </NextPathnameProvider>,
-    );
-
-    expect(getByTestId("pathname").textContent).toBe("/initial-path");
-  });
-
   it("updates the pathname on link click", () => {
     const { getByTestId } = render(
       <NextPathnameProvider>

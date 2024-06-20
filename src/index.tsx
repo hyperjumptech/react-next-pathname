@@ -7,21 +7,19 @@ type NextPathnameContextType = {
   nextPathname: string;
 };
 
+const defaultNextPathname = "/";
+
 export const NextPathnameContext = createContext<NextPathnameContextType>({
-  nextPathname: "/",
+  nextPathname: defaultNextPathname,
 });
 
-export function NextPathnameProvider({
-  defaultPathname = "/",
-  children,
-}: {
-  defaultPathname?: string;
-  children: ReactNode;
-}) {
-  const [nextPathname, setNextPathname] = useState(defaultPathname);
+export function NextPathnameProvider({ children }: { children: ReactNode }) {
+  const [nextPathname, setNextPathname] = useState(defaultNextPathname);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
+
+    setNextPathname(window.location.pathname);
 
     const handleClick = (event: MouseEvent) => {
       const target = (event.target as HTMLElement).closest("a");
