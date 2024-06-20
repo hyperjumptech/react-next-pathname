@@ -1,7 +1,7 @@
 {
   "name": "@hyperjumptech/react-next-pathname",
   "description": "Instantly tracks the next pathname on link click.",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "typings": "dist/index.d.ts",
