@@ -4,8 +4,7 @@ export default defineConfig({
   dts: true,
   clean: true,
   outDir: "dist",
-  format: ["cjs", "esm"],
-  target: "esnext",
+  format: ["esm"],
   entry: ["src/index.tsx"],
   external: ["react", "react-dom"],
 });

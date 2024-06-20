@@ -1,19 +1,13 @@
 {
   "compilerOptions": {
     "jsx": "react",
-    "target": "esnext",
+    "target": "es5",
     "module": "esnext",
-    "moduleResolution": "node",
     "strict": true,
     "skipLibCheck": true,
+    "isolatedModules": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "vitest.config.ts",
-    "rollup.config.mjs",
-    ".eslintrc.js",
-    "src",
-    "test"
-  ]
+  "include": ["vitest.config.js", ".eslintrc.js", "src"]
 }

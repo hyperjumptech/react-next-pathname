@@ -1,25 +1,13 @@
 import React from "react";
-import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
+import { afterEach, describe, expect, it } from "vitest";
 
 import { cleanup, fireEvent, render } from "@testing-library/react";
 
 import { NextPathnameProvider, useNextPathname } from "../src";
 
 describe("NextPathnameProvider", () => {
-  beforeAll(() => {
-    global.window = Object.create(window);
-
-    Object.defineProperty(window, "location", {
-      value: {
-        pathname: "/initial-path",
-        origin: "http://localhost",
-      },
-    });
-  });
-
   afterEach(() => {
     cleanup();
-    vi.restoreAllMocks();
   });
 
   const TestComponent = () => {
@@ -31,6 +19,16 @@ describe("NextPathnameProvider", () => {
   it("provides the initial pathname", () => {
     const { getByTestId } = render(
       <NextPathnameProvider>
+        <TestComponent />
+      </NextPathnameProvider>,
+    );
+
+    expect(getByTestId("pathname").textContent).toBe("/");
+  });
+
+  it("provides the initial pathname from defaultPathname", () => {
+    const { getByTestId } = render(
+      <NextPathnameProvider defaultPathname="/initial-path">
         <TestComponent />
       </NextPathnameProvider>,
     );
@@ -65,6 +63,6 @@ describe("NextPathnameProvider", () => {
 
     fireEvent.click(getByTestId("external-link"));
 
-    expect(getByTestId("pathname").textContent).toBe("/initial-path");
+    expect(getByTestId("pathname").textContent).toBe("/");
   });
 });
