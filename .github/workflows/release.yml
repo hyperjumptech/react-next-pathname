@@ -26,7 +26,14 @@ jobs:
       - name: Build package
         run: npm run build
 
-      - name: Release package
+      - name: Release @hyperjumptech/react-next-pathname
         run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: apps/react
+
+      - name: Release @hyperjumptech/react-next-pathname-nextjs
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: apps/next

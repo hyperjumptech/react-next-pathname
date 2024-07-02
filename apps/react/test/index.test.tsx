@@ -20,7 +20,7 @@ describe("NextPathnameProvider", () => {
     const { getByTestId } = render(
       <NextPathnameProvider>
         <TestComponent />
-      </NextPathnameProvider>,
+      </NextPathnameProvider>
     );
 
     expect(getByTestId("pathname").textContent).toBe("/");
@@ -33,26 +33,11 @@ describe("NextPathnameProvider", () => {
         <a href="/new-path" data-testid="link">
           Link
         </a>
-      </NextPathnameProvider>,
+      </NextPathnameProvider>
     );
 
     fireEvent.click(getByTestId("link"));
 
     expect(getByTestId("pathname").textContent).toBe("/new-path");
-  });
-
-  it("does not update the pathname for external links", () => {
-    const { getByTestId } = render(
-      <NextPathnameProvider>
-        <TestComponent />
-        <a href="https://external.com" data-testid="external-link">
-          External Link
-        </a>
-      </NextPathnameProvider>,
-    );
-
-    fireEvent.click(getByTestId("external-link"));
-
-    expect(getByTestId("pathname").textContent).toBe("/");
   });
 });

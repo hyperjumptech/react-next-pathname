@@ -3,11 +3,12 @@
     "jsx": "react",
     "target": "es5",
     "module": "esnext",
+    "moduleResolution": "node",
     "strict": true,
     "skipLibCheck": true,
     "isolatedModules": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["vitest.config.js", ".eslintrc.js", "src"]
+  "include": [".eslintrc.js", "src"]
 }
