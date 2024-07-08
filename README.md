@@ -1,6 +1,6 @@
 # About
 
-![Minified size](https://img.shields.io/bundlephobia/min/@hyperjumptech/react-next-pathname) ![Test coverage](https://img.shields.io/codecov/c/github/hyperjumptech/react-next-pathname) ![Monthly download](https://img.shields.io/npm/dm/@hyperjumptech/react-next-pathname)
+![Minified size](https://img.shields.io/bundlephobia/min/@hyperjumptech/react-next-pathname) ![Monthly download](https://img.shields.io/npm/dm/@hyperjumptech/react-next-pathname)
 
 `@hyperjumptech/react-next-pathname` is a helper tool designed to enhance the user experience in React applications by improving the responsiveness and feedback when navigating between pages. It ensures that the active state of links in components like sidebars is updated immediately upon clicking, even if the new page is slow to load.
 
