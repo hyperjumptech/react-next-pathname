@@ -114,7 +114,7 @@ const Sidebar = () => {
 
 ## Next.js Support
 
-For Next.js applications, use the package `@hyperjumptech/react-next-pathname-nextjs`.
+Currently, the `@hyperjumptech/react-next-pathname-nextjs` package only supports the Page Router. If you are using the App Router, you can use the `@hyperjumptech/react-next-pathname` package. However, please note that it is not fully optimized for the App Router.
 
 ## License
 

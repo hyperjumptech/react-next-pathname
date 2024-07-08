@@ -30,10 +30,10 @@ jobs:
         run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        working-directory: apps/react
+        working-directory: packages/react-next-pathname
 
       - name: Release @hyperjumptech/react-next-pathname-nextjs
         run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        working-directory: apps/next
+        working-directory: packages/react-next-pathname-nextjs
