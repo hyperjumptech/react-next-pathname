@@ -1,0 +1,43 @@
+{
+  "name": "@hyperjumptech/react-next-pathname",
+  "description": "Instantly tracks the next pathname on link click.",
+  "version": "1.0.3",
+  "main": "dist/index.mjs",
+  "typings": "dist/index.d.mts",
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/react": "^16.0.0",
+    "@vitest/coverage-v8": "^1.6.0",
+    "jsdom": "^24.1.0",
+    "tsup": "^8.1.0",
+    "vitest": "^1.6.0"
+  },
+  "peerDependencies": {
+    "react": "*",
+    "react-dom": "*"
+  },
+  "files": ["dist"],
+  "license": "MIT",
+  "author": "Kevin Hermawan",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hyperjumptech/react-next-pathname.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hyperjumptech/react-next-pathname/issues"
+  },
+  "homepage": "https://github.com/hyperjumptech/react-next-pathname#readme",
+  "keywords": [
+    "react",
+    "pathname",
+    "navigation",
+    "link",
+    "routing",
+    "next pathname"
+  ]
+}

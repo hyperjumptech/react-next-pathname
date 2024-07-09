@@ -1,8 +1,12 @@
 # About
 
-![Minified size](https://img.shields.io/bundlephobia/min/@hyperjumptech/react-next-pathname) ![Test coverage](https://img.shields.io/codecov/c/github/hyperjumptech/react-next-pathname) ![Monthly download](https://img.shields.io/npm/dm/@hyperjumptech/react-next-pathname)
+![Minified size](https://img.shields.io/bundlephobia/min/@hyperjumptech/react-next-pathname) ![Monthly download](https://img.shields.io/npm/dm/@hyperjumptech/react-next-pathname)
 
-This is a helper tool you can use in your React application to make it feel faster and smoother when navigating between pages. Say you have a sidebar that contains links to different pages. When you click a link, the component that displays the link will show that it's currently active—usually like this:
+`@hyperjumptech/react-next-pathname` is a helper tool designed to enhance the user experience in React applications by improving the responsiveness and feedback when navigating between pages. It ensures that the active state of links in components like sidebars is updated immediately upon clicking, even if the new page is slow to load.
+
+## Problem
+
+When a user clicks a link, the typical implementation updates the link's active state based on the current pathname, which only changes after the new page loads. This delay can confuse users, making them think that their click did not register. For example:
 
 ```tsx
 const isPathActive = (pathname: string) => {
@@ -15,15 +19,12 @@ const Sidebar = () => {
       {[
         { pathname: "/", title: "Home" },
         { pathname: "/about", title: "About" },
-        {
-          pathname: "/contact",
-          title: "Contact",
-        },
+        { pathname: "/contact", title: "Contact" },
       ].map(({ pathname, title }) => (
         <a
           key={pathname}
           href={pathname}
-          className={`${ispathActive(pathname) ? "active" : ""}`}
+          className={`${isPathActive(pathname) ? "active" : ""}`}
         >
           {title}
         </a>
@@ -33,9 +34,9 @@ const Sidebar = () => {
 };
 ```
 
-The problem is that when the clicked page is slow to load due to bad network conditions or slow server response, the clicked link will not immediately show that it's active. This is because the `window.location.pathname` is not updated until the page has fully loaded. Users might think that nothing is happening when they click the link, and they will be confused.
+## Solution
 
-This library helps you solve this problem by allowing you to get the next pathname immediately when a link is clicked, without waiting for the new page to load.
+`@hyperjumptech/react-next-pathname` solves this problem by providing the next pathname immediately when a link is clicked, without waiting for the new page to load. This ensures that the active state is updated right away, providing immediate feedback to the user.
 
 ## Installation
 
@@ -96,15 +97,12 @@ const Sidebar = () => {
       {[
         { pathname: "/", title: "Home" },
         { pathname: "/about", title: "About" },
-        {
-          pathname: "/contact",
-          title: "Contact",
-        },
+        { pathname: "/contact", title: "Contact" },
       ].map(({ pathname, title }) => (
         <a
           key={pathname}
           href={pathname}
-          className={`${ispathActive(pathname, nextPathname) ? "active" : ""}`}
+          className={`${isPathActive(pathname, nextPathname) ? "active" : ""}`}
         >
           {title}
         </a>
@@ -113,6 +111,10 @@ const Sidebar = () => {
   );
 };
 ```
+
+## Next.js Support
+
+Currently, the `@hyperjumptech/react-next-pathname-nextjs` package only supports the Page Router. If you are using the App Router, you can use the `@hyperjumptech/react-next-pathname` package. However, please note that it is not fully optimized for the App Router.
 
 ## License
 

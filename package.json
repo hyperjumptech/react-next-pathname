@@ -1,55 +1,24 @@
 {
-  "name": "@hyperjumptech/react-next-pathname",
-  "description": "Instantly tracks the next pathname on link click.",
-  "version": "1.0.2",
-  "main": "dist/index.mjs",
-  "typings": "dist/index.d.mts",
+  "name": "react-next-pathname",
+  "private": true,
   "scripts": {
-    "dev": "tsup --watch",
-    "build": "tsup",
-    "format": "biome format . --write",
-    "format:check": "biome format .",
-    "lint": "biome check .",
-    "test": "vitest run",
-    "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "test": "turbo test",
+    "test:coverage": "turbo test:coverage"
   },
   "devDependencies": {
-    "@babel/preset-react": "^7.24.7",
-    "@biomejs/biome": "1.8.1",
-    "@swc/core": "^1.6.3",
-    "@testing-library/jest-dom": "^6.4.6",
-    "@testing-library/react": "^16.0.0",
-    "@types/node": "^20.14.2",
+    "@swc/core": "^1.6.7",
     "@types/react": "^18.3.3",
-    "@vitest/coverage-v8": "^1.6.0",
-    "esbuild": "^0.21.5",
-    "jsdom": "^24.1.0",
-    "tsup": "^8.1.0",
-    "typescript": "^5.4.5",
-    "vitest": "^1.6.0"
+    "turbo": "^2.0.6",
+    "typescript": "^5.4.5"
   },
-  "peerDependencies": {
-    "react": "*",
-    "react-dom": "*"
+  "engines": {
+    "node": ">=18"
   },
-  "files": ["dist"],
-  "license": "MIT",
-  "author": "Kevin Hermawan",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hyperjumptech/react-next-pathname.git"
-  },
-  "bugs": {
-    "url": "https://github.com/hyperjumptech/react-next-pathname/issues"
-  },
-  "homepage": "https://github.com/hyperjumptech/react-next-pathname#readme",
-  "keywords": [
-    "react",
-    "pathname",
-    "navigation",
-    "link",
-    "routing",
-    "next pathname"
+  "packageManager": "npm@10.5.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
   ]
 }

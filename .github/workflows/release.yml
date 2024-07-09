@@ -6,7 +6,7 @@ on:
 
 jobs:
   release:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     permissions:
       contents: read
       id-token: write
@@ -26,7 +26,14 @@ jobs:
       - name: Build package
         run: npm run build
 
-      - name: Release package
+      - name: Release @hyperjumptech/react-next-pathname
         run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: packages/react-next-pathname
+
+      - name: Release @hyperjumptech/react-next-pathname-nextjs
+        run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        working-directory: packages/react-next-pathname-nextjs
