@@ -1,4 +1,4 @@
-import { useNextPathname } from "../../../../packages/react-next-pathname-nextjs/dist/index.mjs";
+import { useNextPathname } from "@hyperjumptech/react-next-pathname-nextjs";
 import Link from "next/link";
 
 const tabs = [

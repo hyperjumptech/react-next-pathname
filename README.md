@@ -116,6 +116,22 @@ const Sidebar = () => {
 
 Currently, the `@hyperjumptech/react-next-pathname-nextjs` package only supports the Page Router. If you are using the App Router, you can use the `@hyperjumptech/react-next-pathname` package. However, please note that it is not fully optimized for the App Router.
 
+## Development Guide
+
+If this is the first time you have cloned the repository, run the following commands:
+
+```bash
+npm install
+npm run build:packages
+```
+
+If you want to run the example, navigate to the example app directory and run the development server:
+
+```bash
+cd apps/example-nextjs
+npm run dev
+```
+
 ## License
 
 [MIT License](/LICENSE)

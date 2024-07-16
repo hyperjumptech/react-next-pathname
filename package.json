@@ -2,7 +2,8 @@
   "name": "react-next-pathname",
   "private": true,
   "scripts": {
-    "build": "turbo build",
+    "build:packages": "turbo run build --filter=@hyperjumptech/*",
+    "build:apps": "turbo run build --filter=example-*",
     "lint": "turbo lint",
     "test": "turbo test",
     "test:coverage": "turbo test:coverage"
