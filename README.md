@@ -132,6 +132,12 @@ cd apps/example-nextjs
 npm run dev
 ```
 
+Every time you make changes in packages and want to see them in the example app, you need to run:
+
+```bash
+npm run build:packages
+```
+
 ## License
 
 [MIT License](/LICENSE)
