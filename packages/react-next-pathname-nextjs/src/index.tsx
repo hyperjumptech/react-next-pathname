@@ -19,10 +19,16 @@ export function NextPathnameProvider({ children }: { children: ReactNode }) {
   const [nextPathname, setNextPathname] = useState(router.pathname);
 
   useEffect(() => {
-    router.events.on("routeChangeStart", setNextPathname);
+    const handleRouteChange = (url: string) => {
+      setNextPathname(url);
+    };
+
+    router.events.on("routeChangeStart", handleRouteChange);
+    router.events.on("routeChangeComplete", handleRouteChange);
 
     return () => {
-      router.events.off("routeChangeStart", setNextPathname);
+      router.events.off("routeChangeStart", handleRouteChange);
+      router.events.off("routeChangeComplete", handleRouteChange);
     };
   }, [router.events]);
 
